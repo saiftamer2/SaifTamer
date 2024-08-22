@@ -1,27 +1,35 @@
 mkdir project_files
+cd project_files
 mkdir reports logs data
+cd reports
 touch report1.md report2.md
+cd /home/osc/Desktop/project_files/logs
 touch system.log error.log file1.pdf file2.pdf
+cd /home/osc/Desktop/project_files/data
 touch data.csv info.txt
+cd /home/osc/Desktop/project_files/reports
 nano report1.md
+cd /home/osc/Desktop/project_files/logs
 nano system.log
+cd /home/osc/Desktop/project_files/data
 nano data.csv
+cd /home/osc/Desktop/project_files/logs
 tar -cvf logs_backup.tar system.log error.log file1.pdf file2.pdf
-mv logs_backup.tar /home/osc/project_files
+mv logs_backup.tar /home/osc/Desktop/project_files
 tar -xvf logs_backup.tar -C logs
-find /home/osc -name "*.md"
-find /home/osc/project_files -name "*.log"
-find /home/osc/project_files -name "file1.pdf"
-find /home/osc/project_files -iname "*.pdf"
-find /home/osc/project_files/logs -type f
-in -s /home/osc/project_files/data/data.csv /home/osc/project_files/link_data.csv
+find /home/osc/Desktop -name "*.md"
+find /home/osc/Desktop/project_files -name "*.log"
+find /home/osc/Desktop/project_files -name "file1.pdf"
+find /home/osc/Desktop/project_files -iname "*.pdf"
+find /home/osc/Desktop/project_files/logs -type f
+in -s /home/osc/Desktop/project_files/data/data.csv /home/osc/Desktop/project_files/link_data.csv
 nano link_data.csv
 cat data.csv
-rm /home/osc/project_files/link_data.csv
-echo "Summary Start" > /home/osc/project_files/summary.txt
-date >> /home/osc/project_files/summary.txt
-wc -1 < /home/osc/project_files/summary.txt | tee -a /home/osc/project_files/summary.txt 
-wc -w /home/osc/project_files/reports/reports1.md
-wc -m /home/osc/project_files/logs/system.log >> /home/osc/project_files/summary.txt
-find /home/osc/project_file -type f -o -type d | wc -1 >> /home/osc/project_files/summary.txt
-cat /home/osc/project_files/summary.txt
+rm /home/osc/Desktop/project_files/link_data.csv
+echo "Summary Start" > /home/osc/Desktop/project_files/summary.txt
+date >> /home/osc/Desktop/project_files/summary.txt
+wc -1 < /home/osc/project_files/summary.txt | tee -a /home/osc/Desktop/project_files/summary.txt 
+wc -w /home/osc/Desktop/project_files/reports/reports1.md
+wc -m /home/osc/Desktop/project_files/logs/system.log >> /home/osc/Desktop/project_files/summary.txt
+find /home/osc/Desktop/project_file -type f -o -type d | wc -1 >> /home/osc/Desktop/project_files/summary.txt
+cat /home/osc/Desktop/project_files/summary.txt
