@@ -31,5 +31,5 @@ date >> /home/osc/Desktop/project_files/summary.txt
 wc -1 < /home/osc/Desktop/project_files/summary.txt | tee -a /home/osc/Desktop/project_files/summary.txt 
 wc -w /home/osc/Desktop/project_files/reports/reports1.md
 wc -m /home/osc/Desktop/project_files/logs/system.log >> /home/osc/Desktop/project_files/summary.txt
-find /home/osc/Desktop/project_file -type f -o -type d | wc -1 >> /home/osc/Desktop/project_files/summary.txt
+find /home/osc/Desktop/project_files -type f -o -type d | wc -1 >> /home/osc/Desktop/project_files/summary.txt
 cat /home/osc/Desktop/project_files/summary.txt
