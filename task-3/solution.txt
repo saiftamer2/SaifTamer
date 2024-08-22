@@ -22,14 +22,15 @@ find /home/osc/Desktop/project_files -name "*.log"
 find /home/osc/Desktop/project_files -name "file1.pdf"
 find /home/osc/Desktop/project_files -iname "*.pdf"
 find /home/osc/Desktop/project_files/logs -type f
-in -s /home/osc/Desktop/project_files/data/data.csv /home/osc/Desktop/project_files/link_data.csv
+cd /home/osc/Desktop/project_files
+ln -s /home/osc/Desktop/project_files/data/data.csv link_data.csv
 nano link_data.csv
 cat data.csv
-rm /home/osc/Desktop/project_files/link_data.csv
-echo "Summary Start" > /home/osc/Desktop/project_files/summary.txt
-date >> /home/osc/Desktop/project_files/summary.txt
-wc -1 < /home/osc/Desktop/project_files/summary.txt | tee -a /home/osc/Desktop/project_files/summary.txt 
+rm link_data.csv
+echo "Summary Start" >> summary.txt
+date >>summary.txt
+wc -l summary.txt | tee -a summary.txt 
 wc -w /home/osc/Desktop/project_files/reports/report1.md
-wc -m /home/osc/Desktop/project_files/logs/system.log >> /home/osc/Desktop/project_files/summary.txt
-find /home/osc/Desktop/project_files -type f -o -type d | wc -1 >> /home/osc/Desktop/project_files/summary.txt
-cat /home/osc/Desktop/project_files/summary.txt
+wc -w /home/osc/Desktop/project_files/logs/system.log | tee summary.txt
+ls | wc -l | tee -a summary.txt
+cat summary.txt
